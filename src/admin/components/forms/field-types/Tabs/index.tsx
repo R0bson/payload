@@ -88,12 +88,10 @@ const TabsField: React.FC<Props> = (props) => {
         <div className={`${baseClass}__tabs-wrap`}>
           <div className={`${baseClass}__tabs`}>
             {tabs.map((tab, tabIndex) => {
-              console.log('tab', tab);
-              return (
+              const OptionalTabButton = withCondition(() => (
                 <button
                   key={tabIndex}
                   type="button"
-                  disabled={!!tab.admin?.condition}
                   className={[
                     `${baseClass}__tab-button`,
                     activeTabIndex === tabIndex && `${baseClass}__tab-button--active`,
@@ -104,6 +102,13 @@ const TabsField: React.FC<Props> = (props) => {
                 >
                   {tab.label ? getTranslation(tab.label, i18n) : (tabHasName(tab) && tab.name)}
                 </button>
+              ));
+              return (
+                <OptionalTabButton
+                  key={tabIndex}
+                  {...tab}
+                  path={path}
+                />
               );
             })}
           </div>
