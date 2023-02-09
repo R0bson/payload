@@ -88,10 +88,12 @@ const TabsField: React.FC<Props> = (props) => {
         <div className={`${baseClass}__tabs-wrap`}>
           <div className={`${baseClass}__tabs`}>
             {tabs.map((tab, tabIndex) => {
+              console.log('tab', tab);
               return (
                 <button
                   key={tabIndex}
                   type="button"
+                  disabled={!!tab.admin?.condition}
                   className={[
                     `${baseClass}__tab-button`,
                     activeTabIndex === tabIndex && `${baseClass}__tab-button--active`,

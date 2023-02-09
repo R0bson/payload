@@ -423,6 +423,8 @@ export const date = baseField.keys({
     date: joi.object({
       displayFormat: joi.string(),
       pickerAppearance: joi.string(),
+      showMonthDropdown: joi.boolean(),
+      showYearDropdown: joi.boolean(),
       minDate: joi.date(),
       maxDate: joi.date(),
       minTime: joi.date(),

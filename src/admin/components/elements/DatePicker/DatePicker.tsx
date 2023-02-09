@@ -29,6 +29,8 @@ const DateTime: React.FC<Props> = (props) => {
     monthsToShow = 1,
     minTime,
     maxTime,
+    showMonthDropdown,
+    showYearDropdown,
     timeIntervals = 30,
     timeFormat = 'h:mm aa',
     readOnly,
@@ -71,6 +73,8 @@ const DateTime: React.FC<Props> = (props) => {
     showPopperArrow: false,
     selected: value && new Date(value),
     customInputRef: 'ref',
+    showMonthDropdown,
+    showYearDropdown,
     showMonthYearPicker: pickerAppearance === 'monthOnly',
   };
 

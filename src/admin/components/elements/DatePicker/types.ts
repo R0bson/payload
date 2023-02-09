@@ -1,6 +1,8 @@
 type SharedProps = {
   displayFormat?: string
   pickerAppearance?: 'dayAndTime' | 'timeOnly' | 'dayOnly' | 'monthOnly'
+  showMonthDropdown?: boolean
+  showYearDropdown?: boolean
 }
 
 type TimePickerProps = {
